@@ -1,0 +1,66 @@
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+  font-size: 2em; /* Responsive font size */
+}
+
+.explore-menu-text {
+  width: 100%; /* Full width for better responsiveness */
+  max-width: 600px; /* Limit max width */
+  color: #808080;
+  font-size: 1.1em; /* Responsive font size */
+}
+
+.explore-menu-list {
+  display: flex;
+  gap: 20px; /* Adjusted gap */
+  text-align: center;
+  justify-content: flex-start; /* Align items to the start */
+  margin: 20px 0;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  padding: 10px 0; /* Add padding */
+}
+
+.explore-menu-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.explore-menu-list-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+}
+
+.explore-menu-list-item img {
+  width: 15vw; /* Adjusted for better responsiveness */
+  max-width: 100px; /* Limit max width */
+  min-width: 80px; /* Ensure minimum size */
+  cursor: pointer;
+  border-radius: 50%; /* Use percentage for fully rounded images */
+  transition: 0.2s;
+}
+
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #747474;
+  font-size: 1em; /* Font size adjustment */
+  min-width: 80px; /* Ensure text has a minimum width */
+  cursor: pointer;
+}
+
+.explore-menu hr {
+  margin: 10px 0;
+  height: 2px;
+  border: none; 
+  background-color: wheat;
+}
+
+.explore-menu-list-item .active {
+  border: 4px solid tomato;
+  padding: 2px;
+}

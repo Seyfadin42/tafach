@@ -1,0 +1,74 @@
+.footer {
+  color: #d9d9d9;
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 8vw;
+  margin-top: 100px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.footer-content-left, .footer-content-right, .footer-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-content-left li, .footer-content-right li, .footer-content-center li {
+  list-style: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.footer-content-right h2, .footer-content-center h2 {
+  color: white;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons */
+  margin-top: 20px; /* Add space above the icons */
+}
+
+.footer-social-icons img {
+  width: 40px; /* Set a uniform size for the icons */
+  margin: 0 10px; /* Add space between icons */
+  transition: transform 0.3s; /* Smooth scaling effect on hover */
+}
+
+.footer-social-icons img:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.footer hr {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background-color: gray;
+  border: none;
+}
+
+h4 {
+  text-align: center; /* Center the developer's name */
+  color: #e61c1c; /* Match the footer text color */
+  margin-top: 20px; /* Space above the developer's name */
+}
+
+.footer-copyright {
+  text-align: center; /* Center the copyright text */
+  color: #8b4848; /* Match the footer text color */
+  margin-top: 5px; /* Space above the copyright text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+  }
+}
