@@ -13,21 +13,32 @@ function PlaceOrder() {
   // Check if there are items in the cart
   const hasItems = subtotal > 0;
 
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    // Optionally, you can handle form data here or just let Formspree handle it
+    event.target.submit(); // Submit the form to Formspree
+  };
+
   return (
-    <form className='place-order'>
+    <form 
+      className='place-order' 
+      onSubmit={handleSubmit} 
+      action='https://formspree.io/f/movazbkl' 
+      method='post'
+    >
       <div className="place-order-left">
         <h2 className="title">Delivery Information</h2>
         <div className="multi-field"> 
-          <input type="text" placeholder='First Name' required />
-          <input type="text" placeholder='Last Name' required />
+          <input type="text" placeholder='First Name' required name='firstName' />
+          <input type="text" placeholder='Last Name' required name='lastName' />
         </div>
-        <input type="email" placeholder='Email Address' required />
-        <input type="text" placeholder='Street' required />
+        <input type="email" placeholder='Email Address' required name='email' />
+        <input type="text" placeholder='Street' required name='street' />
         <div className="multi-field"> 
-          <input type="text" placeholder='City' required />
-          <input type="text" placeholder='State' required />
+          <input type="text" placeholder='City' required name='city' />
+          <input type="text" placeholder='State' required name='state' />
         </div>
-        <input type='tel' placeholder='Phone Number' required />
+        <input type='tel' placeholder='Phone Number' required name='phone' />
       </div>
 
       <div className="place-order-right">
@@ -47,7 +58,7 @@ function PlaceOrder() {
                 <b>Total:</b>
                 <b>{total.toFixed(2)} Birr</b>
               </div>
-              <button className="pay-button">PAY NOW</button>
+              <button type="submit" className="pay-button">PAY NOW</button>
             </div>
           ) : (
             <p className="empty-cart-message">Your cart is empty.</p>
